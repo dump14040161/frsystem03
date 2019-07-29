@@ -16,11 +16,11 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigIntenger(reservation_id);
-            $table->dateTime('start');
-            $table->dateTime('end');
-            $table->Intenger('count_adult');
-            $table->Intenger('cunt_child');
+            $table->date('start');
+            $table->date('end');
+            $table->time('check_in');
+            $table->integer('count_adult');
+            $table->integer('count_child');
             // $table->date('end_time');
             // $table->string('adult_count');
             // $table->string('child_count');

@@ -25,8 +25,6 @@ Route::get('/', function () {
         'facilities',
         [
             'facilities' => $facilities,
-            //  'reservation' => 'reservation'
-
         ]
     );
 });
@@ -67,7 +65,6 @@ Route::get('/reservation_page', function () {
         'reservations',
         [
             'reservations' => $reservations
-
         ]
     );
 });
@@ -75,9 +72,9 @@ Route::get('/reservation_page', function () {
 // タスク作成,post=create
 Route::post('/reservations', function (Request $request) {
     $validator = Validator::make($request->all(), [
-        'name' => 'required|max:255',
         'start' => 'required',
         'end' => 'required',
+        'check_in' => 'required',
         'count_adult' => 'required',
         'count_child' => 'required',
     ]);
@@ -89,14 +86,14 @@ Route::post('/reservations', function (Request $request) {
     }
 
     $reservation= new Reservation();
-    // $facility->name = $request->name;
     $reservation->start = $request->start;
     $reservation->end = $request->end;
     $reservation->count_adult = $request->count_adult;
     $reservation->count_child = $request->count_child;
+    $reservation->check_in = $request->check_in;
     $reservation->save();
 
-    return redirect('/facilities');
+    return redirect('/reservation_page');
 });
 
 // キャンセルボタン
