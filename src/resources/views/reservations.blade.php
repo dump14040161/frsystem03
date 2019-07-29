@@ -10,13 +10,7 @@
             {{ csrf_field() }}
 
             <!-- タスク名 -->
-            <div class="form-group">
-                <div class="col-sm-6">
-                    <!-- FIXME: inputタグに変更する -->
-                    {{-- <input type="text" name="name" id="reservation-name" class="form-control"> --}}
-                    <input type="text" name="start" id="resrvation-start" class="form-control">
-                </div>
-            </div>
+
 
             <div class="form-group">
 
@@ -47,7 +41,7 @@
                     <div class="row">
                         <div class='col-sm-5'>
                             <div class="form-group">
-                                    <select type="text" name="start" id="reservation-start" class="form-control">
+                                    <select type="date" name="start" id="reservation-start" class="form-control">
                                             <option>15:00</option>
                                             <option>16:00</option>
                                             <option>17:00</option>
@@ -108,6 +102,9 @@
         </form>
     </div>
 
+     
+
+
 
     <!-- TODO: 現在のタスク -->
     @if (count($reservations) > 0)
@@ -158,3 +155,5 @@
     @endif
 
 @endsection
+
+
