@@ -41,12 +41,8 @@
                 <div class="row">
                     <div class='col-sm-5'>
                         <div class="form-group">
-                            <select name="check-in" id="reservation-check-in" class="form-control">
-                                <option>15:00</option>
-                                <option>16:00</option>
-                                <option>17:00</option>
-                                <option>18:00</option>
-                            </select>
+                            <input type="time" name="check_in" id="reservation-check_in" class="form-control">
+
                         </div>
                     </div>
                 </div>

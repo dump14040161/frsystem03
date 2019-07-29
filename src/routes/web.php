@@ -74,6 +74,7 @@ Route::post('/reservations', function (Request $request) {
     $validator = Validator::make($request->all(), [
         'start' => 'required',
         'end' => 'required',
+        'check_in' => 'required',
         'count_adult' => 'required',
         'count_child' => 'required',
     ]);
@@ -89,9 +90,10 @@ Route::post('/reservations', function (Request $request) {
     $reservation->end = $request->end;
     $reservation->count_adult = $request->count_adult;
     $reservation->count_child = $request->count_child;
-    // $reservation->save();
+    $reservation->check_in = $request->check_in;
+    $reservation->save();
 
-    return redirect('/');
+    return redirect('/reservation_page');
 });
 
 // キャンセルボタン
