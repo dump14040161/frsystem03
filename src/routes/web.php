@@ -75,7 +75,6 @@ Route::get('/reservation_page', function () {
 // タスク作成,post=create
 Route::post('/reservations', function (Request $request) {
     $validator = Validator::make($request->all(), [
-        'name' => 'required|max:255',
         'start' => 'required',
         'end' => 'required',
         'count_adult' => 'required',
