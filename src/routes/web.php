@@ -25,8 +25,6 @@ Route::get('/', function () {
         'facilities',
         [
             'facilities' => $facilities,
-            //  'reservation' => 'reservation'
-
         ]
     );
 });
@@ -67,7 +65,6 @@ Route::get('/reservation_page', function () {
         'reservations',
         [
             'reservations' => $reservations
-
         ]
     );
 });
@@ -88,14 +85,13 @@ Route::post('/reservations', function (Request $request) {
     }
 
     $reservation= new Reservation();
-    // $facility->name = $request->name;
     $reservation->start = $request->start;
     $reservation->end = $request->end;
     $reservation->count_adult = $request->count_adult;
     $reservation->count_child = $request->count_child;
-    $reservation->save();
+    // $reservation->save();
 
-    return redirect('/facilities');
+    return redirect('/');
 });
 
 // キャンセルボタン
